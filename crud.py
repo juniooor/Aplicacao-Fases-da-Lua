@@ -22,25 +22,25 @@ conexao.commit()
 
 
 
-# #READ/LER
-# comando = f'SELECT * FROM dados'
-# cursor.execute(comando)
-# resultado = cursor.fetchall() #ler banco de dados
-# print(resultado)
+#READ/LER
+comando = f'SELECT * FROM dados'
+cursor.execute(comando)
+resultado = cursor.fetchall() #ler banco de dados
+print(resultado)
 
 
-# #UPDATE
-# # if usuarioclick == "alterar numero":
-# numerod = '81999999999'
-# nomed = 'Junior' 
-# comando = f'UPDATE dados SET numero = "{numerod}" WHERE nome = "{nomed}" '
-# # elif usuarioclick=="alterar nome":
-# #     numerod = '81999999999'
-# #     nomed = 'jujunior' 
-# #     comando = f'UPDATE dados SET  nome = "{nomed}" WHERE numero = "{numerod}" '
+#UPDATE
+# if usuarioclick == "alterar numero":
+numerod = '81999999999'
+nomed = 'Junior' 
+comando = f'UPDATE dados SET numero = "{numerod}" WHERE nome = "{nomed}" '
+elif usuarioclick=="alterar nome":
+    numerod = '81999999999'
+    nomed = 'jujunior' 
+    comando = f'UPDATE dados SET  nome = "{nomed}" WHERE numero = "{numerod}" '
 
-# cursor.execute(comando)
-# conexao.commit()
+cursor.execute(comando)
+conexao.commit()
 
 
 
