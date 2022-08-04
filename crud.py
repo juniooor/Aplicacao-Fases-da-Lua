@@ -12,32 +12,32 @@ conexao = mysql.connector.connect(
 cursor = conexao.cursor()
 
 
-# CRIAR
-nome = "Junior"
-numero = "81996316701" 
+# # CRIAR
+# nome = "Junior"
+# numero = "81996316701" 
 
-comando = f'INSERT INTO dados (nome,numero) VALUES ("{nome}", "{numero}")'
-cursor.execute(comando)
-conexao.commit()
+# comando = f'INSERT INTO dados (nome,numero) VALUES ("{nome}", "{numero}")'
+# cursor.execute(comando)
+# conexao.commit()
 
 
 
-#READ/LER
-comando = f'SELECT * FROM dados'
-cursor.execute(comando)
-resultado = cursor.fetchall() #ler banco de dados
-print(resultado)
+# #READ/LER
+# comando = f'SELECT * FROM dados'
+# cursor.execute(comando)
+# resultado = cursor.fetchall() #ler banco de dados
+# print(resultado)
 
 
 #UPDATE
 # if usuarioclick == "alterar numero":
-numerod = '81999999999'
-nomed = 'Junior' 
+numerod = '8181818199'
+nomed = 'leticya' 
 comando = f'UPDATE dados SET numero = "{numerod}" WHERE nome = "{nomed}" '
-elif usuarioclick=="alterar nome":
-    numerod = '81999999999'
-    nomed = 'jujunior' 
-    comando = f'UPDATE dados SET  nome = "{nomed}" WHERE numero = "{numerod}" '
+# elif usuarioclick=="alterar nome":
+#     numerod = '81999999999'
+#     nomed = 'jujunior' 
+#     comando = f'UPDATE dados SET  nome = "{nomed}" WHERE numero = "{numerod}" '
 
 cursor.execute(comando)
 conexao.commit()

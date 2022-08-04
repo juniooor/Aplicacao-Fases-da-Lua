@@ -1,4 +1,3 @@
-from distutils.log import error
 import mysql.connector
 
 class Cadastrar:
@@ -20,19 +19,29 @@ class Cadastrar:
         self.conexao.close()
 
     def alter_Number(self, nome, numero):
-        comando = f'UPDATE dados SET numero = "{numero}" WHERE nome = "{nome}" '
+        #alterar numero na base de dados passa  o nome correto e o numero novo para atualizar
+        comando = f'UPDATE dados SET numero = "{numero}" WHERE nome = "{nome}" LIMIT 1 '
         self.cursor.execute(comando)
         self.conexao.commit()
         self.cursor.close()
         self.conexao.close()
 
     def alter_Name(self, nome, numero):
-        comando = f'UPDATE dados SET nome = "{nome}" WHERE numero = "{numero}"'
+        #alterar nome na base dados passa o numero correto e o nome novo para cadastro
+        comando = f'UPDATE dados SET nome = "{nome}" WHERE numero = "{numero}" LIMIT 1'
         self.cursor.execute(comando)
         self.conexao.commit()
         self.cursor.close()
         self.conexao.close()
 
+
+    def Deletar(self, numero):
+        #deletar usuario usando o numero de celular
+        comando = f'DELETE FROM dados WHERE numero = "{numero}"'
+        self.cursor.execute(comando)
+        self.conexao.commit()
+        self.cursor.close()
+        self.conexao.close()
 
         
 
@@ -41,7 +50,7 @@ class Cadastrar:
 if __name__ == '__main__':
     try:
         cadastro = Cadastrar()
-        cadastro.criar(nome='jujunior', numero='99979777')
+        cadastro.Deletar(numero='99595959555')
     except:
         print('ALÔ KLEITINHO A CASA CAIU')
     
