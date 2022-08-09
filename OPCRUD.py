@@ -36,7 +36,7 @@ class Cadastrar:
 
 
     def Deletar(self, email):
-        #deletar usuario usando o email de celular
+        #deletar usuario usando o email do usuario
         comando = f'DELETE FROM dados WHERE email = "{email}"'
         self.cursor.execute(comando)
         self.conexao.commit()
@@ -50,7 +50,7 @@ class Cadastrar:
 if __name__ == '__main__':
     try:
         cadastro = Cadastrar()
-        cadastro.Deletar(email='99595959555')
+        cadastro.Deletar(email="81996316701")
     except:
         print('ALÔ KLEITINHO A CASA CAIU')
     
