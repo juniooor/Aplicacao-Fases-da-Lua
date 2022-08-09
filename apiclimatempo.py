@@ -1,12 +1,15 @@
 import requests, json
 
-Token =  '338d8994a19bd99f4cdb5e4c735ac97d'
-TypeConsult = 1
+Token =  'ef660f491907bb9049a03d59868ea9d8'
+cidade = str(input('digite o nome da cidade: '))
+link = f'https://api.openweathermap.org/data/2.5/weather?q={cidade}&appid={Token}&units=metric&lang=pt_br'
 
-if TypeConsult == 1:
-    city = input("Digite o nome da cidade: ")
-    url = "http://apiadvisor.climatempo.com.br/api/v1/locale/city?name=" + city + "&token=" + Token
-    response = requests.request("GET",url)
-    return_response = json.loads(response.text)
-    print(return_response)
-    print("testeee")
+requisicao = requests.get(link)
+
+requisicao_dict = requisicao.json()
+
+description = requisicao_dict['weather'][0]['description']
+temperatura = requisicao_dict['main']['temp']
+
+
+print(description, f'{temperatura}°C' )
