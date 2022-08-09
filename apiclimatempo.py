@@ -1,4 +1,3 @@
-from re import T
 import requests, json
 
 Token =  '338d8994a19bd99f4cdb5e4c735ac97d'
@@ -10,3 +9,4 @@ if TypeConsult == 1:
     response = requests.request("GET",url)
     return_response = json.loads(response.text)
     print(return_response)
+    print("testeee")
