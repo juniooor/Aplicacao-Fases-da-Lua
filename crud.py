@@ -14,9 +14,9 @@ cursor = conexao.cursor()
 
 # # CRIAR
 # nome = "Junior"
-# numero = "81996316701" 
+# email = "81996316701" 
 
-# comando = f'INSERT INTO dados (nome,numero) VALUES ("{nome}", "{numero}")'
+# comando = f'INSERT INTO dados (nome,email) VALUES ("{nome}", "{email}")'
 # cursor.execute(comando)
 # conexao.commit()
 
@@ -30,14 +30,14 @@ cursor = conexao.cursor()
 
 
 #UPDATE
-# if usuarioclick == "alterar numero":
-numerod = '8181818199'
+# if usuarioclick == "alterar email":
+emaild = '8181818199'
 nomed = 'leticya' 
-comando = f'UPDATE dados SET numero = "{numerod}" WHERE nome = "{nomed}" '
+comando = f'UPDATE dados SET email = "{emaild}" WHERE nome = "{nomed}" '
 # elif usuarioclick=="alterar nome":
-#     numerod = '81999999999'
+#     emaild = '81999999999'
 #     nomed = 'jujunior' 
-#     comando = f'UPDATE dados SET  nome = "{nomed}" WHERE numero = "{numerod}" '
+#     comando = f'UPDATE dados SET  nome = "{nomed}" WHERE email = "{emaild}" '
 
 cursor.execute(comando)
 conexao.commit()
@@ -47,12 +47,12 @@ conexao.commit()
 
 #DELETE
 # # if usuarioclick == "deletar usuario":
-# numerod = '81999999999'
-# comando = f'DELETE FROM  dados WHERE numero = "{numerod}" '
+# emaild = '81999999999'
+# comando = f'DELETE FROM  dados WHERE email = "{emaild}" '
 # # # elif usuarioclick=="alterar nome":
-# # #     numerod = '81999999999'
+# # #     emaild = '81999999999'
 # # #     nomed = 'jujunior' 
-# # #     comando = 'UPDATE dados SET  nome = "{nomed}" WHERE numero = "{numerod}" '
+# # #     comando = 'UPDATE dados SET  nome = "{nomed}" WHERE email = "{emaild}" '
 
 # cursor.execute(comando)
 # conexao.commit()

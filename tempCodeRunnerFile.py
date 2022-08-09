@@ -1,9 +1,9 @@
 
 # # CRIAR
 # nome = "Junior"
-# numero = "81996316701" 
+# email = "81996316701" 
 
-# comando = f'INSERT INTO dados (nome,numero) VALUES ("{nome}", "{numero}")'
+# comando = f'INSERT INTO dados (nome,email) VALUES ("{nome}", "{email}")'
 # cursor.execute(comando)
 # conexao.commit()
 
