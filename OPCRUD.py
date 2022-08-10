@@ -50,7 +50,7 @@ class Cadastrar:
 if __name__ == '__main__':
     try:
         cadastro = Cadastrar()
-        cadastro.Deletar(email="81996316701")
+        cadastro.criar(nome='Vania', email="jvaniacosta@hotmail.com")
     except:
         print('ALÔ KLEITINHO A CASA CAIU')
     

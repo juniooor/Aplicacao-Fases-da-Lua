@@ -1,7 +1,8 @@
 import mysql.connector
 from mysql.connector import Error
 
-
+emails = []
+nomes = []
 try:
     conexao = mysql.connector.connect(
             host='localhost',
@@ -14,13 +15,14 @@ try:
     cursor = conexao.cursor()
     cursor.execute(consulta_sql)
     linhas = cursor.fetchall()
-    print("numero total de registro retornados", cursor.rowcount )
+    total_de_dados = cursor.rowcount 
     
-    print("\n Mostrando os dados cadastrados")
     for linha in linhas:
-        print(f"id: {linha[0]}")
-        print(f"nome: {linha[1]}")
-        print(f"email: {linha[2]} \n")
+        # print(f"id: {linha[0]}")
+        nomes.append(linha[1]) 
+        # print(f"nome: {linha[1]}")
+        emails.append(linha[2])
+        # print(f"email: {linha[2]} \n")
         
 except Error as err:
     print("error na tabela ", err)
@@ -29,4 +31,3 @@ finally:
     if conexao.is_connected():
         conexao.close()
         cursor.close()
-        print('fechou')
