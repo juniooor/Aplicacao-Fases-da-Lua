@@ -19,10 +19,12 @@ for i in idemails:
         Olá {i[1]}.
              
             >>{data}<< 
-            Previsão do tempo da cidade de Recife hoje é 
+            Previsão do tempo da cidade de Jaboatão dos guararapes 
             >>>>{tempo} 
             temperatura de 
             >>>>{celcius}°C
+            
+            PS: perdoem os envios de email, tá em fase de teste
         """
 
     msg = EmailMessage()

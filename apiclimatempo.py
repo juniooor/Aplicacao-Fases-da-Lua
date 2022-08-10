@@ -1,7 +1,7 @@
 import requests, json
 
 Token =  'ef660f491907bb9049a03d59868ea9d8'
-cidade = ' Recife '
+cidade = ' Jaboatao dos guararapes '
 link = f'https://api.openweathermap.org/data/2.5/weather?q={cidade}&appid={Token}&units=metric&lang=pt_br'
 
 requisicao = requests.get(link)
