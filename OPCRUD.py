@@ -47,12 +47,12 @@ class Cadastrar:
 
 
 
-if __name__ == '__main__':
-    try:
-        cadastro = Cadastrar()
-        cadastro.criar(nome='Vania', email="jvaniacosta@hotmail.com")
-    except:
-        print('ALÔ KLEITINHO A CASA CAIU')
+# if __name__ == '__main__':
+#     try:
+#         cadastro = Cadastrar()
+#         cadastro.criar(nome='Vania', email="jvaniacosta@hotmail.com")
+#     except:
+#         print('ALÔ KLEITINHO A CASA CAIU')
     
-    finally:
-        print('positivo e operante')
+#     finally:
+#         print('positivo e operante')
