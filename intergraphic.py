@@ -7,7 +7,11 @@
 # E-mail
 #Cidade
 import csv
+import email
+import opcrud
 
+
+cadastro = opcrud.Cadastrar()
 dados = []
 with open ('infos_contato.csv', 'r', encoding='utf-8') as arquivo_csv:
     tabela = csv.reader(arquivo_csv)
@@ -28,7 +32,10 @@ with open ('infos_contato.csv', 'r', encoding='utf-8') as arquivo_csv:
 for i in dados:
     if i[1] == 'Criar':
         print(f'criar usuario: {i[2]}\n com email: {i[3]} \n cidade: {i[4]} ')
+        cadastro.Criar(nome=i[2], email= i[3], cidade=[4])
         print('')
     elif i[1] == 'Alterar':
         print(f'Alterar usuario: {i[2]}\n com email: {i[3]} \n cidade: {i[4]} ')
         print('')
+    elif i[1] == 'Excluir':
+        print(f' Excluir usuario: {i[2]}\n com email: {i[3]} \n cidade: {i[4]} ')

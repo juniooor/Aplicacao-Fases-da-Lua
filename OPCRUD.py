@@ -33,7 +33,17 @@ class Cadastrar:
         self.conexao.commit()
         self.cursor.close()
         self.conexao.close()
+        
+        
+    def alter_City(self, Nome, email, Cidade):
+        #alterar cidade na base dados passa o email correto e o nome da cidade para cadastro
+        comando = f'UPDATE dados SET city = "{Cidade}" and SET WHERE email = "{email}" LIMIT 1'
+        self.cursor.execute(comando)
+        self.conexao.commit()
+        self.cursor.close()
+        self.conexao.close()
 
+    
 
     def Deletar(self, email):
         #deletar usuario usando o email do usuario
