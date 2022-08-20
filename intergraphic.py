@@ -10,7 +10,7 @@ import csv
 import email
 import opcrud
 
-
+e = opcrud.exist
 cadastro = opcrud.Cadastrar()
 dados = []
 with open ('infos_contato.csv', 'r', encoding='utf-8') as arquivo_csv:
@@ -31,11 +31,14 @@ with open ('infos_contato.csv', 'r', encoding='utf-8') as arquivo_csv:
             
 for i in dados:
     if i[1] == 'Criar':
-        print(f'criar usuario: {i[2]}\n com email: {i[3]} \n cidade: {i[4]} ')
-        cadastro.Criar(nome=i[2], email= i[3], cidade=[4])
+        if not exist(i[1]):
+            print(f'criar usuario: {i[2]}\n com email: {i[3]} \n cidade: {i[4]} ')
+            cadastro.criar(nome= i[2], email= i[3], cidade=[4])
         print('')
     elif i[1] == 'Alterar':
         print(f'Alterar usuario: {i[2]}\n com email: {i[3]} \n cidade: {i[4]} ')
+        cadastro.alter_dados(nome=i[2], email=i[3], Cidade=i[4])
         print('')
     elif i[1] == 'Excluir':
         print(f' Excluir usuario: {i[2]}\n com email: {i[3]} \n cidade: {i[4]} ')
+        cadastro.Deletar(email=i[3])
