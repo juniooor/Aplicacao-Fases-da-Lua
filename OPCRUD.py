@@ -1,6 +1,7 @@
 import mysql.connector
 from mysql.connector import Error
 
+
 class Cadastrar:
     def __init__(self):
         self.conexao = mysql.connector.connect(
@@ -10,6 +11,9 @@ class Cadastrar:
             database='bd_crud',
         )
         self.cursor = self.conexao.cursor()
+
+
+        # comando = f'SELECT * FROM dados IF NOT EXIST ( SELECT * FROM dados WHERE email = "{email}") BEGIN INSERT INTO dados(nome, email, cidade) VALUES ("{nome}", "{email}", "{cidade}") END;'
 
     def criar(self, nome, email, cidade):
         #NA Função criar() passar os parametros nome e email do usuario
@@ -46,7 +50,7 @@ class Cadastrar:
 # if __name__ == '__main__':
 #     try:
 #         cadastro = Cadastrar()
-#         cadastro.Deletar(email="jvaniacosta@hotmail.com")
+#         cadastro.criar(nome= 'junior', email="juniormodern@hotmail.com", cidade='recife')
 #     except Error as err :
 #         print(f'ALÔ KLEITINHO A CASA CAIU \n {err}')
     

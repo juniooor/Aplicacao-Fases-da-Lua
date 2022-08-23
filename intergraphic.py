@@ -9,32 +9,32 @@
 import csv
 import email
 import opcrud
+import dadosbd
 
-e = opcrud.exist
+linhasbd = dadosbd.linhas
+
+# e = opcrud.exist
 cadastro = opcrud.Cadastrar()
 dados = []
-with open ('infos_contato.csv', 'r', encoding='utf-8') as arquivo_csv:
+with open ('info_contato.csv', 'r', encoding='utf-8') as arquivo_csv:
     tabela = csv.reader(arquivo_csv)
     next(tabela)
     
     for a in tabela:
         dados.append(a)
         
-   
-   
-    # for linha in tabela:
-    #     print(linha)
-    #     # dados.append(linha[1]) #opcao
-    #     # dados.append(linha[2]) # nome
-    #     # dados.append(linha[3]) # email
-    #     # dados.append(linha[4]) #cidade
+
+        
             
 for i in dados:
     if i[1] == 'Criar':
-        if not exist(i[1]):
-            print(f'criar usuario: {i[2]}\n com email: {i[3]} \n cidade: {i[4]} ')
-            cadastro.criar(nome= i[2], email= i[3], cidade=[4])
-        print('')
+        # for l in linhasbd:
+        #     if l[2] == i[3]:
+        #         print(f'ja foi cadastrado: {l[2]} == {i[3]}')
+        #     else:
+        #         print(f'VOU CADASTRAR: {l[2]} != {i[3]}')
+        #         # print(f'criar usuario: {i[2]}\n com email: {i[3]} \n cidade: {i[4]} ')    
+        cadastro.criar(nome= i[2], email= i[3], cidade= i[4])
     elif i[1] == 'Alterar':
         print(f'Alterar usuario: {i[2]}\n com email: {i[3]} \n cidade: {i[4]} ')
         cadastro.alter_dados(nome=i[2], email=i[3], Cidade=i[4])

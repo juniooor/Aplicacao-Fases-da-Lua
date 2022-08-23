@@ -3,10 +3,10 @@ import datetime ,dadosbd, ssl, smtplib
 import apiclimatempo as api
 
 idemails = dadosbd.linhas
-
-tempo = api.description
-celcius = api.temperatura
 for i in idemails:
+    tempo = api.description
+    celcius = api.temperatura
+    cityapi = api.nomecity
     email_sender = 'emaildetestedevjr@gmail.com'
     email_password = 'yqwbxnpeompbzwvh'
     email_receiver = i[2]
@@ -19,7 +19,7 @@ for i in idemails:
         Olá {i[1]}.
              
             >>{data}<< 
-            Previsão do tempo da cidade de Jaboatão dos guararapes 
+            Previsão do tempo da cidade de {cityapi} 
             >>>>{tempo} 
             temperatura de 
             >>>>{celcius}°C
