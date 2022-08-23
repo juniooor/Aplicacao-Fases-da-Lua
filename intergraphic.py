@@ -23,7 +23,6 @@ with open ('info_contato.csv', 'r', encoding='utf-8') as arquivo_csv:
     for a in tabela:
         dados.append(a)
         
-
         
             
 for i in dados:

@@ -1,14 +1,19 @@
+import csv
+import email
+import opcrud
 import dadosbd
 
+linhasbd = dadosbd.linhas
 
-dados = dadosbd.linhas
-
-
-email = 'juniormodern@hotmail.com'
-
-
-for i in dados:
-    if i[2] == email:
-        print('Tô aqui painho')
-    else:
-        print(i)
+# e = opcrud.exist
+cadastro = opcrud.Cadastrar()
+dados = []
+with open ('info_contato.csv', 'r', encoding='utf-8') as arquivo_csv:
+    tabela = csv.reader(arquivo_csv)
+    next(tabela)
+    
+    for a in tabela:
+        dados.append(a)
+        
+        
+            
