@@ -1,12 +1,11 @@
 from email.message import EmailMessage
 import datetime ,dadosbd, ssl, smtplib
-import apiclimatempo as api
+import apiclimatempo as app
 
 idemails = dadosbd.linhas
 for i in idemails:
-    tempo = api.description
-    celcius = api.temperatura
-    cityapi = api.nomecity
+    
+    tempo = app.api(i[3])
     email_sender = 'emaildetestedevjr@gmail.com'
     email_password = 'yqwbxnpeompbzwvh'
     email_receiver = i[2]
@@ -18,13 +17,16 @@ for i in idemails:
     corpo_email = f"""
         Olá {i[1]}.
              
-            >>{data}<< 
-            Previsão do tempo da cidade de {cityapi} 
-            >>>>{tempo} 
+            Previsão do tempo em
+                >{i[3]}< 
+            {data}
+            >{tempo[0]} 
             temperatura de 
-            >>>>{celcius}°C
+            >{tempo[1]}°C
             
-            PS: perdoem os envios de email, tá em fase de teste
+             <3
+            
+            Link para descadastrar: https://forms.gle/mju8PNZR1ucXJW3LA 
         """
 
     msg = EmailMessage()

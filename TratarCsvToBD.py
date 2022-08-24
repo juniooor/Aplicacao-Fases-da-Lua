@@ -22,18 +22,22 @@ with open ('info_contato.csv', 'r', encoding='utf-8') as arquivo_csv:
     
     for a in tabela:
         dados.append(a)
+      
+bd = []       
+for i in linhasbd:
+    if i[2]:
+        bd.append(i[2])        
         
         
             
 for i in dados:
     if i[1] == 'Criar':
-        # for l in linhasbd:
-        #     if l[2] == i[3]:
-        #         print(f'ja foi cadastrado: {l[2]} == {i[3]}')
-        #     else:
-        #         print(f'VOU CADASTRAR: {l[2]} != {i[3]}')
-        #         # print(f'criar usuario: {i[2]}\n com email: {i[3]} \n cidade: {i[4]} ')    
-        cadastro.criar(nome= i[2], email= i[3], cidade= i[4])
+      for d, b in zip(dados, linhasbd):
+        if d[3] != b[2]:
+            cadastro.criar(nome= i[2], email= i[3], cidade= i[4])
+            print(f'criar usuario: {i[2]}\n com email: {i[3]} \n cidade: {i[4]} ')    
+        else:
+            print(f'são IGUAIS dadosCSV: {d[3]} e BDsql: {b[2]} ')  
     elif i[1] == 'Alterar':
         print(f'Alterar usuario: {i[2]}\n com email: {i[3]} \n cidade: {i[4]} ')
         cadastro.alter_dados(nome=i[2], email=i[3], Cidade=i[4])
