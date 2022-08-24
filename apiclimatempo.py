@@ -1,7 +1,4 @@
 import requests, json
-import dadosbd
-
-
 
 
 def api(cidade):

@@ -6,8 +6,8 @@ idemails = dadosbd.linhas
 for i in idemails:
     
     tempo = app.api(i[3])
-    email_sender = 'emaildetestedevjr@gmail.com'
-    email_password = 'yqwbxnpeompbzwvh'
+    email_sender = 'testesdevjremail@gmail.com'
+    email_password = "rjolvirgaakyizrf"
     email_receiver = i[2]
     # password = 'yqwbxnpeompbzwvh'
 
@@ -24,7 +24,7 @@ for i in idemails:
             temperatura de 
             >{tempo[1]}°C
             
-             <3
+             Obrigado por participar do teste <3
             
             Link para descadastrar: https://forms.gle/mju8PNZR1ucXJW3LA 
         """

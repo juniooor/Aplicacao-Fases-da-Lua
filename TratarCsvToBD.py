@@ -1,20 +1,10 @@
-#encoding: utf-8
-# import pandas as pd
+import csv, opcrud, dadosbd
 
-# tabela = pd.read_csv("infos_contato.csv", sep=',', encoding= "utf-8")
-# ver opção = Opção desejada
-#  nome = Nome
-# E-mail
-#Cidade
-import csv
-import email
-import opcrud
-import dadosbd
 
 linhasbd = dadosbd.linhas
-
-# e = opcrud.exist
+#cadastro = função para cadastrar cada dado do CSV que vem do fomulário
 cadastro = opcrud.Cadastrar()
+
 dados = []
 with open ('info_contato.csv', 'r', encoding='utf-8') as arquivo_csv:
     tabela = csv.reader(arquivo_csv)
