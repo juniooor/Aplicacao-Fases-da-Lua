@@ -16,7 +16,6 @@ try:
     cursor = conexao.cursor()
     cursor.execute(consulta_sql)
     linhas = cursor.fetchall()
-    total_de_dados = cursor.rowcount 
     
         
 except Error as err:

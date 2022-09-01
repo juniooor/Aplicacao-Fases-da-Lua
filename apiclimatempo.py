@@ -8,11 +8,7 @@ def api(cidade):
     requisicao = requests.get(link)
 
     requisicao_dict = requisicao.json()
-
     description = requisicao_dict['weather'][0]['description']
     temperatura = requisicao_dict['main']['temp']
     return description , temperatura
-
-
-
 
