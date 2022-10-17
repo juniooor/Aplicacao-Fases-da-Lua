@@ -12,6 +12,7 @@ class Cadastrar:
         )
         self.cursor = self.conexao.cursor()
 
+    def __del__
 
     def criar(self, nome, email, cidade):
         #NA Função criar() passar os parametros nome e email do usuario
